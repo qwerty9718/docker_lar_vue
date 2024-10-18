@@ -13,6 +13,9 @@ services:
 
   app:
     build:
+      args:
+        user: albert
+        uid: 1000
       context: .
       dockerfile: _docker/app/Dockerfile
     volumes:

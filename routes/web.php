@@ -17,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('{any?}', fn () => view('app'))->where('any','.*');
+
+Route::group(['prefix' => 'app'], function () {
+    Route::get('{any?}', fn () => view('app'))->where('any','.*');
+});
