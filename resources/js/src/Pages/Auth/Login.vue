@@ -3,7 +3,7 @@
   <div class="container mt-5" style="max-width: 800px">
 
     <LoginRegisterSwitcher/>
-
+    {{authStore.errors}}
     <!-- Pills content -->
     <div class="tab-content">
       <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
@@ -11,51 +11,49 @@
 
           <!-- Email input -->
           <div data-mdb-input-init class="form-outline mb-3">
-            <input type="email" id="loginName" class="form-control" />
+
+            <input
+                type="email"
+                id="loginName"
+                class="form-control"
+                v-model="authStore.loginData.email"
+                autocomplete="email"/>
             <label class="form-label" for="loginName">Email or username</label>
+
           </div>
 
           <!-- Password input -->
           <div data-mdb-input-init class="form-outline mb-3">
-            <input type="password" id="loginPassword" class="form-control" />
+            <input
+                type="password"
+                id="loginPassword"
+                class="form-control"
+                v-model="authStore.loginData.password"
+                autocomplete="current-password" />
             <label class="form-label" for="loginPassword">Password</label>
           </div>
 
-          <!-- 2 column grid layout -->
-          <div class="row mb-3">
-            <div class="col-md-6 d-flex justify-content-center">
-              <!-- Checkbox -->
-              <div class="form-check mb-3 mb-md-0">
-                <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                <label class="form-check-label" for="loginCheck"> Remember me </label>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center">
-              <!-- Simple link -->
-              <a href="#!">Forgot password?</a>
-            </div>
+          <div class="form-check mt-2 mb-2">
+            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+            <label class="form-check-label" for="loginCheck"> Remember me </label>
           </div>
 
           <!-- Submit button -->
-          <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-3">Sign in</button>
+          <button type="button" class="btn btn-primary btn-block mb-3" @click="authStore.login()">Sign in</button>
 
-          <!-- Register buttons -->
-          <div class="text-center">
-            <p>Not a member? <a href="#!">Register</a></p>
-          </div>
         </form>
       </div>
     </div>
-    <!-- Pills content -->
 
   </div>
 
 </template>
 
 <script setup>
-
 import LoginRegisterSwitcher from "@/src/Components/Auth/LoginRegisterSwitcher.vue";
+import {auth_store} from "@/src/store/auth_store.js";
+
+const authStore = auth_store();
 </script>
 
 <style scoped>

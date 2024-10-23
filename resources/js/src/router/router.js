@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router";
+import _env_values from "@/src/store/_env_values.js";
 
-const app_prefix = import.meta.env.VITE_APP_PREFIX;
+const app_prefix = _env_values.app_prefix;
 
 const routes = [
     {

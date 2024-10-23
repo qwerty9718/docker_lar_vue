@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia'
 import axios from "axios";
 import i18n from "@/src/i18n/i18n.js";
+import env_values from "@/src/store/_env_values.js";
 
-const storage_lang_key = `lang_${import.meta.env.VITE_APP_NAME}`;
+const storage_lang_key = env_values.storage_lang_key;
 
 export const lang_Store = defineStore('lang_store', {
     state: () => {return {
-        lang: ''
+        lang: '',
+        storage_lang_key : `lang_${import.meta.env.VITE_APP_NAME}`
     }},
 
     actions: {

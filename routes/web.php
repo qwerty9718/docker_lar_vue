@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix' => env('APP_PREFIX')], function () {
+Route::group(['prefix' => env('SPA_PREFIX')], function () {
     Route::get('{any?}', fn () => view('app'))->where('any','.*');
 });
