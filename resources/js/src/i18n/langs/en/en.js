@@ -4,7 +4,9 @@ export default {
     second_page: 'Second page',
     content: 'Content',
     num: 'Number',
-    not_found_404: 'not found page'
+    not_found_404: 'not found page',
+    login: 'Login',
+    register: 'Register'
 
     // // Links
     // ...navbar,

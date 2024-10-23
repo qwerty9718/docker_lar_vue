@@ -4,7 +4,9 @@ export default {
     second_page: 'Вторая страница',
     content: 'Контент',
     num: 'Число',
-    not_found_404: 'такой страницы нет'
+    not_found_404: 'такой страницы нет',
+    login: 'Войти',
+    register: 'Регистрация'
 
     // // Links
     // ...navbar,

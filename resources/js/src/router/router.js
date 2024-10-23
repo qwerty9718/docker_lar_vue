@@ -16,6 +16,18 @@ const routes = [
     },
 
     {
+        path:`/${app_prefix}/login`,
+        component: () => import('@/src/Pages/Auth/Login.vue'),
+        name:'login-page'
+    },
+
+    {
+        path:`/${app_prefix}/register`,
+        component: () => import('@/src/Pages/Auth/Register.vue'),
+        name:'register-page'
+    },
+
+    {
 
         path: `/${app_prefix}:pathMatch(.*)*`,
         component: () => import('@/src/pages/ErrorPage.vue'),
