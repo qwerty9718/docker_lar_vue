@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  $END$
+  <div class="container">
+    {{$t ('main')}}
+  </div>
 </template>
 
 <style scoped>

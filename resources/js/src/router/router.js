@@ -6,7 +6,7 @@ const app_prefix = _env_values.app_prefix;
 const routes = [
     {
         path:`/${app_prefix}`,
-        component: () => import('@/src/pages/MainPage.vue'),
+        component: () => import('@/src/pages/Main.vue'),
         name:'main'
     },
 
