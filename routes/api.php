@@ -20,12 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-    Route::group(['prefix' => 'auth'], function () {
-        Route::post('register',[UserAuthController::class,'register']);
-        Route::post('login',[UserAuthController::class,'login']);
-        Route::post('logout',[UserAuthController::class,'logout'])->middleware('auth:sanctum');
-        Route::get('/get', function () {
-           return '203 ok';
-        });
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('register',[UserAuthController::class,'register']);
+    Route::post('login',[UserAuthController::class,'login']);
+    Route::post('logout',[UserAuthController::class,'logout'])->middleware('auth:sanctum');
+    Route::get('/get', function () {
+        return __('data.get_message');
+    });
 
 });

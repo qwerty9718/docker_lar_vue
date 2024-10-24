@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
+
+Fix (['prefix' => env('SPA_PREFIX')]
+php artisan optimize:clear
+php artisan route:clear
+php artisan config:clear
+
 */
 
 Route::get('/', function () {
