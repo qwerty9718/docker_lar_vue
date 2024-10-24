@@ -26,6 +26,12 @@
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
 
+        <div class="nav-item" style="margin-right: 2px; margin-left: 2px">
+          <router-link class="btn btn-sm btn-outline-dark" :to="{ name: 'login-page' }">
+            {{$t('login')}}
+          </router-link>
+        </div>
+
         <li class="d-flex">
           <button v-if="langStore.lang === 'en'" @click="langStore.setLanguage('ru',reloadPageAfterChangeLang)">en</button>
           <button v-if="langStore.lang === 'ru'" @click="langStore.setLanguage('en',reloadPageAfterChangeLang)">ru</button>
