@@ -1,5 +1,8 @@
 FROM php:8.3-fpm
 
+ARG user
+ARG uid
+
 RUN apt-get update && apt-get install -y \
       apt-utils \
       libpq-dev \
@@ -32,5 +35,13 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 RUN apt-get update && apt-get install -y vim && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+
+#USER root
+#RUN chmod 777 -R /var/www/
+RUN useradd -G www-data,root -u $uid -d /home/$user $user
+RUN mkdir -p /home/$user/.composer && \
+    chown -R $user:$user /home/$user
+USER $user
 
 WORKDIR /var/www

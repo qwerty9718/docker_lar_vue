@@ -1,11 +1,10 @@
 <template>
-  index page
-  <SomeComponent/>
+  <NavBar/>
+  <RouterView/>
 </template>
 
 <script setup>
-
-import SomeComponent from "@/src/Components/SomeComponent.vue";
+import NavBar from "@/src/Components/NavBar.vue";
 </script>
 
 <style scoped>

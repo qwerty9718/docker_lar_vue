@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('{any?}', fn () => view('app'))->where('any','.*');
+
+Route::group(['prefix' => env('SPA_PREFIX')], function () {
+    Route::get('{any?}', fn () => view('app'))->where('any','.*');
+});
